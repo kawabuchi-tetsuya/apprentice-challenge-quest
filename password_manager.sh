@@ -22,7 +22,7 @@ while true; do
       {
         echo "$decrypted"
         echo "$service_name:$user_name:$password"
-      } | gpg -r "$AUTHOR_NAME" -e -a -o password_info/password.txt.asc
+      } | gpg -r "$GPG_FINGERPRINT" -e -a -o password_info/password.txt.asc
 
       echo "パスワードの追加は成功しました。"
       ;;

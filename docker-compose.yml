@@ -10,8 +10,11 @@ services:
     working_dir: /home/foge/workspace
     volumes:
       - ./:/home/foge/workspace
-      - .gnupg:/home/foge/.gnupg
+      - gpg-data:/home/foge/.gnupg
     environment:
       - LANG=en_US.UTF-8
       - LC_ALL=en_US.UTF-8
     command: bash
+
+volumes:
+  gpg-data:
