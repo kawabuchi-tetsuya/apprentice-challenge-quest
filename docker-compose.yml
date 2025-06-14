@@ -1,0 +1,17 @@
+services:
+  ubuntu:
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ubuntu_dev
+    tty: true
+    stdin_open: true
+    working_dir: /home/foge/workspace
+    volumes:
+      - ./:/home/foge/workspace
+      - .gnupg:/home/foge/.gnupg
+    environment:
+      - LANG=en_US.UTF-8
+      - LC_ALL=en_US.UTF-8
+    command: bash
